@@ -78,7 +78,6 @@ class return_fire():
                     if item["field"] == "first_name" or item["field"] == "last_name":
                         string = string.title()
                     item["payload"].append(string)
-
         for i in range(self.count):        
             username = self.first_name_list[i] + self.last_name_list[i] + self.email_list[i]
             password = self.password_list[i]
