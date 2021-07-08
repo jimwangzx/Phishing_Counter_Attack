@@ -2,21 +2,20 @@ import random
 import requests
 import json
 
-
-
 spam_count= int(input("How many logins should I send?   "))
 
-first_names='first_names.txt'
-last_names = 'last_names.txt'
+first_names='./wordlist/first_names.txt'
+last_names = './wordlist/last_names.txt'
+email_extension = './wordlist/email_extensions.txt'
+password_file = './wordlist/rockyou.txt'
 first_name_list = []
 last_name_list = []
 email_list = []
 password_list = []
-email_extension = 'email_extensions.txt'
-password_file = 'rockyou.txt'
 username = ""
 password = ""
 url = 'https://diaztreeandlawnservice.com/4333/log.php'
+
 headers = {
     "Accept-Encoding": "gzip,deflate,br",
     "Connection": "keep-alive",
