@@ -1,1 +1,1 @@
-<methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value>\{\{admin\}\}</value></param><param><value>\{\{fuckyou\}\}</value></param></params></methodCall>
+<methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value>\{\{admin\}\}</value></param><param><value>\{\{password\}\}</value></param></params></methodCall>
