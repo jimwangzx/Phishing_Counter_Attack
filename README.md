@@ -38,5 +38,11 @@ Usage
 
 Phishing site screenshots:
 --------------------------
+***Main Phishing Page***
+![Main phishing page](https://user-images.githubusercontent.com/63277749/124987068-08f89f80-e002-11eb-98be-48692cdebde0.png)  
 
-![Main Phishing Page] ![image](https://user-images.githubusercontent.com/63277749/124987068-08f89f80-e002-11eb-98be-48692cdebde0.png)
+***Credential Theft Page***  
+![Credential Theft page](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/fake_login_1.png)  
+
+***Fake websited used as a front for the endpoint***  Sorry, no screenshot from before the DoS took effect
+![Endpoint Page](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/endpoint.png)
