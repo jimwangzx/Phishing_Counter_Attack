@@ -1,0 +1,251 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.18
+                               
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[34m[i][0m Updating the Database ...
+[34m[i][0m Update completed.
+
+[32m[+][0m URL: https://diaztreeandlawnservice.com/ [192.185.79.206]
+[32m[+][0m Started: Wed Jul  7 18:14:44 2021
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entry: server: Apache
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: https://diaztreeandlawnservice.com/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[32m[+][0m WordPress readme found: https://diaztreeandlawnservice.com/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m Upload directory has listing enabled: https://diaztreeandlawnservice.com/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m The external WP-Cron seems to be enabled: https://diaztreeandlawnservice.com/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 5.4.6 identified (Latest, released on 2021-05-12).
+ | Found By: Rss Generator (Passive Detection)
+ |  - https://diaztreeandlawnservice.com/feed/, <generator>https://wordpress.org/?v=5.4.6</generator>
+ |  - https://diaztreeandlawnservice.com/comments/feed/, <generator>https://wordpress.org/?v=5.4.6</generator>
+
+[32m[+][0m WordPress theme in use: diaztreeandlawnservice
+ | Location: https://diaztreeandlawnservice.com/wp-content/themes/diaztreeandlawnservice/
+ | Style URL: https://diaztreeandlawnservice.com/wp-content/themes/diaztreeandlawnservice/style.css
+ | Style Name: Diaz Tree And Lawn Service
+ | Style URI: http://diaztreeandlawnservice.com/
+ | Author: E Latin Marketing
+ | Author URI: https://www.latinmarketing.us/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 1.0 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - https://diaztreeandlawnservice.com/wp-content/themes/diaztreeandlawnservice/style.css, Match: 'Version: 1.0'
+
+[32m[+][0m Enumerating All Plugins (via Passive Methods)
+[32m[+][0m Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[34m[i][0m Plugin(s) Identified:
+
+[32m[+][0m bootstrap-for-contact-form-7
+ | Location: https://diaztreeandlawnservice.com/wp-content/plugins/bootstrap-for-contact-form-7/
+ | Latest Version: 1.4.8 (up to date)
+ | Last Updated: 2018-05-24T13:31:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 1.4.8 (60% confidence)
+ | Found By: Change Log (Aggressive Detection)
+ |  - https://diaztreeandlawnservice.com/wp-content/plugins/bootstrap-for-contact-form-7/changelog.txt, Match: '= 1.4.8'
+
+[32m[+][0m contact-form-7
+ | Location: https://diaztreeandlawnservice.com/wp-content/plugins/contact-form-7/
+ | Last Updated: 2021-04-29T05:37:00.000Z
+ | [33m[!][0m The version is out of date, the latest version is 5.4.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 5.3.2 (10% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - https://diaztreeandlawnservice.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.2
+
+[32m[+][0m wpcf7-redirect
+ | Location: https://diaztreeandlawnservice.com/wp-content/plugins/wpcf7-redirect/
+ | Latest Version: 2.3.5
+ | Last Updated: 2021-03-03T07:00:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | The version could not be determined.
+
+[32m[+][0m Enumerating Config Backups (via Passive and Aggressive Methods)
+
+ Checking Config Backups -: |==================================================|
+
+[34m[i][0m No Config Backups Found.
+
+[33m[!][0m No WPScan API Token given, as a result vulnerability data has not been output.
+[33m[!][0m You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[32m[+][0m Finished: Wed Jul  7 18:16:14 2021
+[32m[+][0m Requests Done: 193
+[32m[+][0m Cached Requests: 6
+[32m[+][0m Data Sent: 52.157 KB
+[32m[+][0m Data Received: 16.963 MB
+[32m[+][0m Memory used: 216.523 MB
+[32m[+][0m Elapsed time: 00:01:29
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.18
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: https://diaztreeandlawnservice.com/ [192.185.79.206]
+[32m[+][0m Started: Wed Jul  7 18:21:28 2021
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entry: server: Apache
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: https://diaztreeandlawnservice.com/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[32m[+][0m WordPress readme found: https://diaztreeandlawnservice.com/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m Upload directory has listing enabled: https://diaztreeandlawnservice.com/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m The external WP-Cron seems to be enabled: https://diaztreeandlawnservice.com/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 5.4.6 identified (Latest, released on 2021-05-12).
+ | Found By: Rss Generator (Passive Detection)
+ |  - https://diaztreeandlawnservice.com/feed/, <generator>https://wordpress.org/?v=5.4.6</generator>
+ |  - https://diaztreeandlawnservice.com/comments/feed/, <generator>https://wordpress.org/?v=5.4.6</generator>
+
+[32m[+][0m WordPress theme in use: diaztreeandlawnservice
+ | Location: https://diaztreeandlawnservice.com/wp-content/themes/diaztreeandlawnservice/
+ | Style URL: https://diaztreeandlawnservice.com/wp-content/themes/diaztreeandlawnservice/style.css
+ | Style Name: Diaz Tree And Lawn Service
+ | Style URI: http://diaztreeandlawnservice.com/
+ | Author: E Latin Marketing
+ | Author URI: https://www.latinmarketing.us/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 1.0 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - https://diaztreeandlawnservice.com/wp-content/themes/diaztreeandlawnservice/style.css, Match: 'Version: 1.0'
+
+[32m[+][0m Enumerating All Plugins (via Passive Methods)
+[32m[+][0m Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[34m[i][0m Plugin(s) Identified:
+
+[32m[+][0m bootstrap-for-contact-form-7
+ | Location: https://diaztreeandlawnservice.com/wp-content/plugins/bootstrap-for-contact-form-7/
+ | Latest Version: 1.4.8 (up to date)
+ | Last Updated: 2018-05-24T13:31:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 1.4.8 (60% confidence)
+ | Found By: Change Log (Aggressive Detection)
+ |  - https://diaztreeandlawnservice.com/wp-content/plugins/bootstrap-for-contact-form-7/changelog.txt, Match: '= 1.4.8'
+
+[32m[+][0m contact-form-7
+ | Location: https://diaztreeandlawnservice.com/wp-content/plugins/contact-form-7/
+ | Last Updated: 2021-04-29T05:37:00.000Z
+ | [33m[!][0m The version is out of date, the latest version is 5.4.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 5.3.2 (10% confidence)
+ | Found By: Query Parameter (Passive Detection)
+ |  - https://diaztreeandlawnservice.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.2
+
+[32m[+][0m wpcf7-redirect
+ | Location: https://diaztreeandlawnservice.com/wp-content/plugins/wpcf7-redirect/
+ | Latest Version: 2.3.5
+ | Last Updated: 2021-03-03T07:00:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | The version could not be determined.
+
+[32m[+][0m Enumerating Config Backups (via Passive and Aggressive Methods)
+
+ Checking Config Backups -: |==================================================================================================================|
+
+[34m[i][0m No Config Backups Found.
+
+[33m[!][0m No WPScan API Token given, as a result vulnerability data has not been output.
+[33m[!][0m You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[32m[+][0m Finished: Wed Jul  7 18:21:41 2021
+[32m[+][0m Requests Done: 139
+[32m[+][0m Cached Requests: 44
+[32m[+][0m Data Sent: 38.716 KB
+[32m[+][0m Data Received: 41.783 KB
+[32m[+][0m Memory used: 215.098 MB
+[32m[+][0m Elapsed time: 00:00:13

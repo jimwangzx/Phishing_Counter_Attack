@@ -1,0 +1,32 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-07-07 17:22 CDT
+Nmap scan report for diaztreeandlawnservice.com (192.185.79.206)
+Host is up (0.032s latency).
+rDNS record for 192.185.79.206: 192-185-79-206.unifiedlayer.com
+Not shown: 982 closed ports
+PORT     STATE    SERVICE
+21/tcp   open     ftp
+22/tcp   open     ssh
+25/tcp   filtered smtp
+26/tcp   open     rsftp
+53/tcp   open     domain
+80/tcp   open     http
+110/tcp  open     pop3
+143/tcp  open     imap
+443/tcp  open     https
+465/tcp  open     smtps
+587/tcp  open     submission
+993/tcp  open     imaps
+995/tcp  open     pop3s
+2222/tcp open     EtherNetIP-1
+2525/tcp filtered ms-v-worlds
+3306/tcp open     mysql
+5060/tcp open     sip
+8080/tcp open     http-proxy
+Device type: VoIP adapter
+Running: Cisco embedded
+OS CPE: cpe:/h:cisco:unified_call_manager
+OS details: Cisco Unified Communications Manager VoIP adapter
+Network Distance: 15 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 75.29 seconds

@@ -1,0 +1,8 @@
+
+
+Main page: https://lizard-lion-5gzk.squarespace.com/
+
+Data collection form: https://copper-diagnostic-pony.glitch.me/
+
+Their fake page that accepts the post request and acts as an endpoint to collect login attempts: https://diaztreeandlawnservice.com
+

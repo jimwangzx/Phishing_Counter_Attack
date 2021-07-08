@@ -1,0 +1,102 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-07-07 17:27 CDT
+Nmap scan report for diaztreeandlawnservice.com (192.185.79.206)
+Host is up (0.031s latency).
+rDNS record for 192.185.79.206: 192-185-79-206.unifiedlayer.com
+Not shown: 982 closed ports
+PORT     STATE    SERVICE     VERSION
+21/tcp   open     ftp         Pure-FTPd
+| ssl-cert: Subject: commonName=*.websitewelcome.com
+| Subject Alternative Name: DNS:*.websitewelcome.com, DNS:websitewelcome.com
+| Not valid before: 2020-09-03T00:00:00
+|_Not valid after:  2021-09-03T23:59:59
+|_ssl-date: 2021-07-07T22:31:38+00:00; 0s from scanner time.
+22/tcp   open     ssh         OpenSSH 5.3 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 65:4d:cc:5d:2e:be:e6:46:cf:d0:3a:97:15:68:14:c5 (DSA)
+|_  2048 8b:d9:2d:b8:82:30:8a:30:bd:35:97:04:02:ca:06:2c (RSA)
+25/tcp   filtered smtp
+26/tcp   open     smtp        Exim smtpd 4.94.2
+| smtp-commands: omni.websitewelcome.com Hello diaztreeandlawnservice.com [148.72.133.186], SIZE 52428800, 8BITMIME, PIPELINING, PIPE_CONNECT, AUTH PLAIN LOGIN, STARTTLS, HELP, 
+|_ Commands supported: AUTH STARTTLS HELO EHLO MAIL RCPT DATA BDAT NOOP QUIT RSET HELP 
+|_ssl-date: 2021-07-07T22:31:39+00:00; 0s from scanner time.
+53/tcp   open     domain      ISC BIND 9.8.2rc1 (RedHat Enterprise Linux 6)
+| dns-nsid: 
+|_  bind.version: 9.8.2rc1-RedHat-9.8.2-0.68.rc1.el6_10.1
+80/tcp   open     http        Apache httpd
+|_http-generator: WordPress 5.4.6
+|_http-server-header: Apache
+|_http-title: Diaz Tree And Lawn Service
+|_http-trane-info: Problem with XML parsing of /evox/about
+110/tcp  open     pop3        Dovecot pop3d
+|_pop3-capabilities: SASL(PLAIN LOGIN) PIPELINING CAPA STLS AUTH-RESP-CODE USER TOP RESP-CODES UIDL
+| ssl-cert: Subject: commonName=www.diaztreeandlawnservice.com
+| Subject Alternative Name: DNS:diaztreeandlawnservice.com, DNS:www.diaztreeandlawnservice.com
+| Not valid before: 2021-05-16T06:44:14
+|_Not valid after:  2021-08-14T06:44:14
+|_ssl-date: 2021-07-07T22:31:38+00:00; 0s from scanner time.
+143/tcp  open     imap        Dovecot imapd
+|_imap-capabilities: IDLE listed STARTTLS OK AUTH=LOGINA0001 IMAP4rev1 AUTH=PLAIN ENABLE more ID post-login have capabilities NAMESPACE LITERAL+ SASL-IR LOGIN-REFERRALS Pre-login
+| ssl-cert: Subject: commonName=www.diaztreeandlawnservice.com
+| Subject Alternative Name: DNS:diaztreeandlawnservice.com, DNS:www.diaztreeandlawnservice.com
+| Not valid before: 2021-05-16T06:44:14
+|_Not valid after:  2021-08-14T06:44:14
+|_ssl-date: 2021-07-07T22:31:38+00:00; 0s from scanner time.
+443/tcp  open     ssl/http    Apache httpd
+|_http-generator: WordPress 5.4.6
+|_http-server-header: Apache
+|_http-title: Diaz Tree And Lawn Service
+|_http-trane-info: Problem with XML parsing of /evox/about
+| ssl-cert: Subject: commonName=www.diaztreeandlawnservice.com
+| Subject Alternative Name: DNS:diaztreeandlawnservice.com, DNS:www.diaztreeandlawnservice.com
+| Not valid before: 2021-05-16T06:44:14
+|_Not valid after:  2021-08-14T06:44:14
+465/tcp  open     ssl/smtp    Exim smtpd 4.94.2
+|_smtp-commands: Couldn't establish connection on port 465
+|_ssl-date: 2021-07-07T22:31:38+00:00; 0s from scanner time.
+587/tcp  open     smtp        Exim smtpd 4.94.2
+|_smtp-commands: Couldn't establish connection on port 587
+|_ssl-date: 2021-07-07T22:31:39+00:00; 0s from scanner time.
+993/tcp  open     ssl/imap    Dovecot imapd
+|_imap-capabilities: IDLE listed OK AUTH=LOGINA0001 IMAP4rev1 AUTH=PLAIN ENABLE more ID post-login have capabilities NAMESPACE SASL-IR LITERAL+ LOGIN-REFERRALS Pre-login
+| ssl-cert: Subject: commonName=www.diaztreeandlawnservice.com
+| Subject Alternative Name: DNS:diaztreeandlawnservice.com, DNS:www.diaztreeandlawnservice.com
+| Not valid before: 2021-05-16T06:44:14
+|_Not valid after:  2021-08-14T06:44:14
+|_ssl-date: 2021-07-07T22:31:38+00:00; 0s from scanner time.
+995/tcp  open     ssl/pop3    Dovecot pop3d
+|_pop3-capabilities: SASL(PLAIN LOGIN) PIPELINING USER AUTH-RESP-CODE CAPA TOP UIDL RESP-CODES
+| ssl-cert: Subject: commonName=www.diaztreeandlawnservice.com
+| Subject Alternative Name: DNS:diaztreeandlawnservice.com, DNS:www.diaztreeandlawnservice.com
+| Not valid before: 2021-05-16T06:44:14
+|_Not valid after:  2021-08-14T06:44:14
+|_ssl-date: 2021-07-07T22:31:38+00:00; 0s from scanner time.
+2222/tcp open     ssh         OpenSSH 5.3 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 65:4d:cc:5d:2e:be:e6:46:cf:d0:3a:97:15:68:14:c5 (DSA)
+|_  2048 8b:d9:2d:b8:82:30:8a:30:bd:35:97:04:02:ca:06:2c (RSA)
+2525/tcp filtered ms-v-worlds
+3306/tcp open     mysql       MySQL 5.6.41-84.1
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.6.41-84.1
+|   Thread ID: 83463681
+|   Capabilities flags: 65535
+|   Some Capabilities: ConnectWithDatabase, Support41Auth, LongColumnFlag, Speaks41ProtocolOld, ODBCClient, SupportsLoadDataLocal, Speaks41ProtocolNew, IgnoreSigpipes, InteractiveClient, SwitchToSSLAfterHandshake, IgnoreSpaceBeforeParenthesis, SupportsCompression, SupportsTransactions, FoundRows, DontAllowDatabaseTableColumn, LongPassword, SupportsAuthPlugins, SupportsMultipleStatments, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: =p?+UKY\D|eeL,6i/N{B
+|_  Auth Plugin Name: mysql_native_password
+5060/tcp open     tcpwrapped
+8080/tcp open     tcpwrapped
+Device type: VoIP adapter
+Running: Cisco embedded
+OS CPE: cpe:/h:cisco:unified_call_manager
+OS details: Cisco Unified Communications Manager VoIP adapter
+Network Distance: 15 hops
+Service Info: Host: omni.websitewelcome.com; OS: Linux; CPE: cpe:/o:redhat:enterprise_linux:6
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   31.40 ms 192-185-79-206.unifiedlayer.com (192.185.79.206)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 252.16 seconds
