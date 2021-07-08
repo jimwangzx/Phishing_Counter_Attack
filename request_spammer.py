@@ -1,4 +1,5 @@
 from os import system, name
+from time import sleep
 import random
 import requests
 import json
@@ -12,17 +13,16 @@ class return_fire():
         self.clear()
         self.count = int(input("\nHow many login credentials should I send?   "))
 
+        self.delay = False
         self.first_name_list = []
         self.last_name_list = []
         self.email_list = []
         self.password_list = []
         self.payload_list = []
-
         self.first_names = {"field":"first_name", "file":'./wordlist/first_names.txt', "encoding":"UTF-8", "payload":self.first_name_list}
         self.last_names = {"field":"last_name", "file":'./wordlist/last_names.txt', "encoding":"ISO-8859-1", "payload":self.last_name_list}
         self.email_extensions = {"field":"email_extension", "file":'./wordlist/email_extensions.txt', "encoding":"UTF-8", "payload":self.email_list}
         self.passwords = {"field":"password", "file":'./wordlist/rockyou.txt', "encoding":"ISO-8859-1", "payload":self.password_list}
-
         self.master_dictionary=[self.first_names, self.last_names, self.email_extensions, self.passwords]
         
         self.url = 'https://diaztreeandlawnservice.com/4333/log.php'
@@ -45,10 +45,17 @@ class return_fire():
             "p":'',
         }
 
+        choice = input("\nDelay between sending logins?   (y/n):  ")
+        if choice == 'y':
+            self.delay = True
+            self.min_sleep = int(input("\nMinimum time to wait (seconds):  "))
+            self.max_sleep = int(input("Maximum time to wait (seconds):  "))
+
         print("\nBuilding Attack Lists....\n")
         self.payload_builder()
         self.post_request_sender()
 
+    
 
     def clear(self):
         if name == 'nt':
@@ -84,6 +91,9 @@ class return_fire():
             print("\nLogin ", i)
             print("Username: ", self.payload_list[i]['u'])
             print("Password: ", self.payload_list[i]['p'])
+
+            if self.delay == True:
+                sleep(random.randint(self.min_sleep,self.max_sleep))
             #print(r.content)
 
 return_fire()
