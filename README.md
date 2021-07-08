@@ -26,7 +26,7 @@ in order to poison the malicious actors stolen data pool.
 * This method of attack was a success! Not only was their data pool tainted with hundreds of thousands of fake credentials,
   the massive amount of requests resulted in a Denial of Service by using up all the endpoint servers bandwidth and shutting it down..for now.
   
-  ![test](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/Screenshot%20from%202021-07-08%2014-49-30.png)
+  ![Fake_Endpoint](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/endpoint.png)
 
 Usage
 -----
