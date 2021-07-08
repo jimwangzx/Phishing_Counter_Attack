@@ -1,5 +1,5 @@
 # API Poisoning & DOS
-This repository contains data collection against an attempted phising attack.
+This repository contains data collection against an attempted phishing attack.
 -----------------------------------------------------------------------------
 
 **urls** directory contains a file noting the different urls attempted to use to trick users into submitting
