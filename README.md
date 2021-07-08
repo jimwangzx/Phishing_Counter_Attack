@@ -44,5 +44,6 @@ Phishing site screenshots:
 ***Credential Theft Page***  
 ![Credential Theft page](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/fake_login_1.png)  
 
-***Fake websited used as a front for the endpoint***  Sorry, no screenshot from before the DoS took effect
+***Fake websited used as a front for the endpoint***  
+Sorry, no screenshot from before the DoS took effect
 ![Endpoint Page](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/endpoint.png)
