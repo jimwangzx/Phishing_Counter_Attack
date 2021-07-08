@@ -34,6 +34,10 @@ Usage
 3. Open terminal inside the Phishing_Couter_Attack folder and run with:  
 `python3 request_spammer.py`
 
+Forming post request with Postman:
+----------------------------------
+![Postman Photo](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/Postman.png)
+
 Phishing site screenshots:
 --------------------------
 ***Main Phishing Page***
