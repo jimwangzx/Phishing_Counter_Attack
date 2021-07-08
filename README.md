@@ -23,7 +23,10 @@ in order to poison the malicious actors stolen data pool.
 1. The API endpoint was found through inspecting the network traffic in a web browser while submitting fake data.
 2. Postman was used to construct/verify identical POST request headers and payload.
 3. Once a valid POST request was confirmed, a quick python script was written to spam the malicious actors API with fake credentials.
-* This method of attack is called 'Data Poisoning'
+* This method of attack was a success! Not only was their data pool tainted with hundreds of thousands of fake credentials,
+  the massive amount of requests resulted in a Denial of Service by using up all the endpoint servers bandwidth and shutting it down..for now.
+  
+  ![test](https://raw.githubusercontent.com/chparmley/Phishing_Counter_Attack/main/site_pics/Screenshot%20from%202021-07-08%2014-49-30.png)
 
 Usage
 -----
