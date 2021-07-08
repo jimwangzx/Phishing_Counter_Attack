@@ -35,3 +35,8 @@ Usage
 2. Extract ./Diaz/wordlist/rockyou.zip  
 3. Open terminal inside the Phishing_Couter_Attack folder and run with:  
 `python3 request_spammer.py`
+
+Phishing site screenshots:
+--------------------------
+
+![Main Phishing Page] ![image](https://user-images.githubusercontent.com/63277749/124987068-08f89f80-e002-11eb-98be-48692cdebde0.png)
