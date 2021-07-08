@@ -1,75 +1,89 @@
+from os import system, name
 import random
 import requests
 import json
 
-spam_count= int(input("How many logins should I send?   "))
 
-first_names='./wordlist/first_names.txt'
-last_names = './wordlist/last_names.txt'
-email_extension = './wordlist/email_extensions.txt'
-password_file = './wordlist/rockyou.txt'
-first_name_list = []
-last_name_list = []
-email_list = []
-password_list = []
-username = ""
-password = ""
-url = 'https://diaztreeandlawnservice.com/4333/log.php'
 
-headers = {
-    "Accept-Encoding": "gzip,deflate,br",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-    "Host": "diaztreeandlawnservice.com",
-    "Origin": "https://copper-diagnostic-pony.glitch.me",
-    "Refer": "https://copper-diagnostic-pony.glitch.me",
-    "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5",
-    "Accept": "text/html, */*; q=0.01",
-    "Accept-Language": "en-US,en;q=0.5",
-    "Content-Length": "12",
-}
-def post_spammer():
+class return_fire():
+    
+    def __init__(self):
 
-    with open(first_names, "r") as f:
-        lines = f.readlines()
-        for i in range(spam_count):
-            firstname = random.choice(lines)
-            firstname=firstname.rstrip()
-            first_name_list.append(firstname)
+        self.clear()
+        self.count = int(input("\nHow many login credentials should I send?   "))
 
-    with open(last_names,encoding = "ISO-8859-1") as f:
-        lines = f.readlines()
-        for i in range(spam_count):
-            lastname = random.choice(lines)
-            lastname = lastname.rstrip()
-            lastname = lastname.title()
-            last_name_list.append(lastname)
+        self.first_name_list = []
+        self.last_name_list = []
+        self.email_list = []
+        self.password_list = []
+        self.payload_list = []
 
-    with open(email_extension) as f:
-        lines = f.readlines()
-        for i in range(spam_count):
-            email = random.choice(lines)
-            email = email.rstrip()
-            email_list.append(email)
+        self.first_names = {"field":"first_name", "file":'./wordlist/first_names.txt', "encoding":"UTF-8", "payload":self.first_name_list}
+        self.last_names = {"field":"last_name", "file":'./wordlist/last_names.txt', "encoding":"ISO-8859-1", "payload":self.last_name_list}
+        self.email_extensions = {"field":"email_extension", "file":'./wordlist/email_extensions.txt', "encoding":"UTF-8", "payload":self.email_list}
+        self.passwords = {"field":"password", "file":'./wordlist/rockyou.txt', "encoding":"ISO-8859-1", "payload":self.password_list}
 
-    with open(password_file,encoding = "ISO-8859-1") as f:
-        lines = f.readlines()
-        for i in range(spam_count):
-            password = random.choice(lines)
-            password = password.rstrip()
-            password_list.append(password)
+        self.master_dictionary=[self.first_names, self.last_names, self.email_extensions, self.passwords]
+        
+        self.url = 'https://diaztreeandlawnservice.com/4333/log.php'
 
-    for i in range(spam_count):        
-        username = first_name_list[i] + last_name_list[i] +str(random.randint(0, 99))+ email_list[i]
-        password = password_list[i]
+        self.headers = {
+            "Accept-Encoding": "gzip,deflate,br",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Host": "diaztreeandlawnservice.com",
+            "Origin": "https://copper-diagnostic-pony.glitch.me",
+            "Refer": "https://copper-diagnostic-pony.glitch.me",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.52 Safari/536.5",
+            "Accept": "text/html, */*; q=0.01",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Content-Length": "12",
+        }
 
-        payload = {"u":username,"p":password}
+        self.body = {
+            "u":'',
+            "p":'',
+        }
 
-        #r = requests.post(url, data=json.dumps(payload), headers=headers)
-        requests.post(url, data=json.dumps(payload), headers=headers)
-        print("Login ", i)
-        print("Username: ", username)
-        print("Password: ", password,"\n")
-        #print(r.content)
+        print("\nBuilding Attack Lists....\n")
+        self.payload_builder()
+        self.post_request_sender()
 
-post_spammer()
+
+    def clear(self):
+        if name == 'nt':
+            _=system('cls')
+        else:
+            _=system('clear')
+
+
+    def payload_builder(self):
+        for item in self.master_dictionary:
+            # open file and set the encoding type
+            with open(item["file"],encoding = item["encoding"]) as f:
+                lines = f.readlines()
+                for i in range(self.count):
+                    #Creates a name variable dynamically from the current field name by using a dictionary key
+                    globals()[item["field"]] = random.choice(lines)
+                    #.rstrip() removes line breaks
+                    string = globals()[item["field"]].rstrip()
+                    #capitilize the string if it is the beginning of a first/last name
+                    if item["field"] == "first_name" or item["field"] == "last_name":
+                        string = string.title()
+                    item["payload"].append(string)
+
+        for i in range(self.count):        
+            username = self.first_name_list[i] + self.last_name_list[i] + self.email_list[i]
+            password = self.password_list[i]
+            self.payload_list.append({'u':username, 'p':password})
+
+    def post_request_sender(self):
+        for i in range(self.count):        
+            #r = requests.post(url, data=json.dumps(payload), headers=headers)
+            requests.post(self.url, data=json.dumps(self.payload_list[i]), headers=self.headers)
+            print("\nLogin ", i)
+            print("Username: ", self.payload_list[i]['u'])
+            print("Password: ", self.payload_list[i]['p'])
+            #print(r.content)
+
+return_fire()
