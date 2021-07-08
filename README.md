@@ -1,4 +1,4 @@
-# API_Poisoning
+# API_Poisoning & DOS
 This repository contains data collection against an attempted phising attack.
 -----------------------------------------------------------------------------
 
